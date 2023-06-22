@@ -62,7 +62,7 @@ Edit **/etc/password** file and change root user shell from */bin/appliancesh* t
 	1. Verify configuration agent: ``snmp.get``
 	2. Enable snmp agent: ``snmp.enable``
 	3. Setting community name: ``snmp.set --communities public``    
-		*(public is just a sample community, you can set the community you want to use in your network, you should write it down and enter it in the configuration of the [connection to the vCenter](https://.../tree/master/sexigraf#add-connection-to-vcsa-in-sexigraf-web-admin-gui-enhanced) in SexiGraf)*
+		*(public is just a sample community, you can set the community you want to use in your network, you should write it down and enter it in the configuration of the [connection to the vCenter](https://github.com/cislow970/sexigraf#add-connection-to-vcsa-in-sexigraf-web-admin-gui-enhanced) in SexiGraf)*
 	4. Check again configuration agent: ``snmp.get``
 
 * Configure SNMP v3 protocol
@@ -75,9 +75,9 @@ Edit **/etc/password** file and change root user shell from */bin/appliancesh* t
 	4. Set authentication protocol: ``snmp.set --authentication SHA1``
 	5. Set privacy protocol: ``snmp.set --privacy AES128``
 	6. Set password for authentication and privacy: ``snmp.hash --auth_hash secret1 --priv_hash secret2``    
-		*(secret1 and secret2 are respectively your passwords for auth and priv, you should write them down and enter them in the configuration of the [connection to the vCenter](https://.../tree/master/sexigraf#add-connection-to-vcsa-in-sexigraf-web-admin-gui-enhanced) in SexiGraf)*
+		*(secret1 and secret2 are respectively your passwords for auth and priv, you should write them down and enter them in the configuration of the [connection to the vCenter](https://github.com/cislow970/sexigraf#add-connection-to-vcsa-in-sexigraf-web-admin-gui-enhanced) in SexiGraf)*
 	7. Set user for SNMP v3: ``snmp.set --user userid/secret1/secret2/priv``    
-		*(userid is the user you defined for the encrypted and authenticated connection to SNMP v3 agent, you should write it down and enter it in the configuration of the [connection to the vCenter](https://.../tree/master/sexigraf#add-connection-to-vcsa-in-sexigraf-web-admin-gui-enhanced) in SexiGraf)*
+		*(userid is the user you defined for the encrypted and authenticated connection to SNMP v3 agent, you should write it down and enter it in the configuration of the [connection to the vCenter](https://github.com/cislow970/sexigraf#add-connection-to-vcsa-in-sexigraf-web-admin-gui-enhanced) in SexiGraf)*
 	8. Check again configuration agent: ``snmp.get``  
 
 ## Create and configure monitor user on VCSA
