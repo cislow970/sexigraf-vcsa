@@ -83,6 +83,7 @@ Before starting the installation, enable a snapshot.
 15. Copy directory *grafana-clock-panel* from project folder */var/lib/grafana/plugins/* in the same path on SexiGraf appliance
 16. Copy all content from project folder */var/www/admin/* in the same path on SexiGraf appliance (verify that permissions of uploaded files are 644 with ownership www-data:www-data)
 17. Copy all files from project folder */var/www/scripts/* in the same path on SexiGraf appliance (verify that permissions of uploaded files are 644 with ownership www-data:www-data)
+18. Reboot SexiGraf appliance
   
 # Configuration Addon
 
