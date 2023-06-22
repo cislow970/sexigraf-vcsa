@@ -45,10 +45,7 @@ Telegraf acquires SNMP metrics but also checks critical SSL certificates on TCP 
 
 **Before starting the installation, enable a snapshot.**
 
-1. Install on SexiGraf the following python modules: 
-	* > ``pip install graphyte``
-	* > ``pip install influxdb``
-2. Install InfluxDB on SexiGraf (for Ubuntu 20.04):
+1. Install InfluxDB on SexiGraf (for Ubuntu 20.04):
 	* > ``curl -sL https://repos.influxdata.com/influxdb.key | sudo apt-key add -``
 	* > ``echo "deb https://repos.influxdata.com/ubuntu bionic stable" | sudo tee /etc/apt/sources.list.d/influxdb.list``
 	* > ``echo "deb https://repos.influxdata.com/ubuntu bionic stable" | sudo tee /etc/apt/sources.list.d/influxdb.list``
@@ -57,9 +54,17 @@ Telegraf acquires SNMP metrics but also checks critical SSL certificates on TCP 
 	* > ``systemctl status influxdb``
 	* > ``systemctl enable --now influxdb``
 	* > ``systemctl start influxdb``
+
+2. Install on SexiGraf the following python modules: 
+	* > ``pip install graphyte``
+	* > ``pip install influxdb``
+
 3. [Donwload project from GitHub](https://github.com/cislow970/sexigraf/archive/refs/heads/main.zip)
+
 4. Copy InfluxDB config *influxdb.conf* from project folder /etc/influxdb/ in the same folder on SexiGraf appliance
+
 5. Launch influx client from command line: ``influx``  
+
 6. Submit Influx Query Language statements for create database, users and grants ([Reference guide InfluxDB](https://docs.influxdata.com/influxdb/v1.8/introduction/get-started/)):
 	* > ``CREATE DATABASE vcsa_rest``
 	* > ``CREATE DATABASE vcsa_telegraf``
@@ -72,17 +77,29 @@ Telegraf acquires SNMP metrics but also checks critical SSL certificates on TCP 
 	* > ``CREATE RETENTION POLICY "four_months" ON "vcsa_rest" DURATION 16w REPLICATION 1``
 	* > ``DROP RETENTION POLICY autogen ON vcsa_telegraf``
 	* > ``DROP RETENTION POLICY autogen ON vcsa_rest``
-7. Restart InfluxDB: ``systemctl restart influxdb.service``
+
+7. Exit from influx command line and restart service: ``systemctl restart influxdb.service``
+
 8. Copy all files from project folder */etc/telegraf/telegraf.d/* in the same path on SexiGraf appliance (verify that permissions of uploaded files are 644 with ownership root:root)
+
 9. Copy directory *templates* from project folder */etc/telegraf/* in the same path on SexiGraf appliance
+
 10. Copy file from project folder */etc/grafana/provisioning/dashboards/* in the same path on SexiGraf appliance (make the ownership and permissions of the uploaded file consistent with those already present)
+
 11. Copy file from project folder */mnt/wfs/inventory/* in the same path on SexiGraf appliance (verify that permissions of uploaded file are 644 with ownership www-data:www-data)
+
 12. Copy directory *vcsa_monitor* from project folder */usr/lib/python3.8/* in the same path on SexiGraf appliance
+
 13. Copy all files from project folder */usr/local/bin/* in the same path on SexiGraf appliance (verify that permissions of uploaded files are 755 with ownership root:root)
+
 14. Copy directory *VMware_VCSA* from project folder */var/lib/grafana/dashboards/* in the same path on SexiGraf appliance
+
 15. Copy directory *grafana-clock-panel* from project folder */var/lib/grafana/plugins/* in the same path on SexiGraf appliance
+
 16. Copy all content from project folder */var/www/admin/* in the same path on SexiGraf appliance (verify that permissions of uploaded files are 644 with ownership www-data:www-data)
+
 17. Copy all files from project folder */var/www/scripts/* in the same path on SexiGraf appliance (verify that permissions of uploaded files are 644 with ownership www-data:www-data)
+
 18. Reboot SexiGraf appliance
 
 # Configuration Addon
