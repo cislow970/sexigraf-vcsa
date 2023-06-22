@@ -1,0 +1,881 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Welcome to VCSA REST API Monitoring’s documentation! &#8212; VCSA REST API Monitoring stable 2.0.0 documentation</title>
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">VCSA REST API Monitoring stable 2.0.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Welcome to VCSA REST API Monitoring’s documentation!</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-vcsa_monitor.__main__">
+<span id="welcome-to-vcsa-rest-api-monitoring-s-documentation"></span><h1>Welcome to VCSA REST API Monitoring’s documentation!<a class="headerlink" href="#module-vcsa_monitor.__main__" title="Permalink to this headline">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Description:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>This robot uses the methods exposed by the Rest API to monitor the VCSA.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>python -m vcsa_monitor [-h|–help] [-v|–vcsa &lt;FQDN VCSA&gt;] [-u|–username &lt;LOGIN USER&gt;] [-p|–password &lt;LOGIN PASSWORD&gt;] [-m|–method &lt;REST METHOD&gt;] [-f|–function &lt;METRIC FUNCTION&gt;] [-c|–checklist] [-s|–save &lt;BACKEND TYPE&gt;] [-d|–debug] [-l|–log] [-r|–release]</p>
+<blockquote>
+<div><p>optional arguments:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>                                          <span class="n">show</span> <span class="n">this</span> <span class="n">help</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span>
+<span class="o">-</span><span class="n">v</span> <span class="o">&lt;</span><span class="n">FQDN</span> <span class="n">VCSA</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">--</span><span class="n">vcsa</span> <span class="o">&lt;</span><span class="n">FQDN</span> <span class="n">VCSA</span><span class="o">&gt;</span>                  <span class="n">name</span> <span class="n">of</span> <span class="n">a</span> <span class="n">specific</span> <span class="n">vCenter</span> <span class="p">(</span><span class="n">fqdn</span><span class="p">)</span>
+<span class="o">-</span><span class="n">u</span> <span class="o">&lt;</span><span class="n">LOGIN</span> <span class="n">USER</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">--</span><span class="n">username</span> <span class="o">&lt;</span><span class="n">LOGIN</span> <span class="n">USER</span><span class="o">&gt;</span>            <span class="n">username</span> <span class="k">for</span> <span class="n">login</span> <span class="n">on</span> <span class="n">rest</span> <span class="n">api</span>
+<span class="o">-</span><span class="n">p</span> <span class="o">&lt;</span><span class="n">LOGIN</span> <span class="n">PASSWORD</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">--</span><span class="n">password</span> <span class="o">&lt;</span><span class="n">LOGIN</span> <span class="n">PASSWORD</span><span class="o">&gt;</span>    <span class="n">password</span> <span class="k">for</span> <span class="n">login</span> <span class="n">on</span> <span class="n">rest</span> <span class="n">api</span> <span class="p">(</span><span class="n">encoded</span> <span class="n">base64</span><span class="p">)</span>
+<span class="o">-</span><span class="n">m</span> <span class="o">&lt;</span><span class="n">REST</span> <span class="n">METHOD</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">--</span><span class="n">method</span> <span class="o">&lt;</span><span class="n">REST</span> <span class="n">METHOD</span><span class="o">&gt;</span>            <span class="n">call</span> <span class="n">a</span> <span class="n">specific</span> <span class="n">method</span> <span class="n">of</span> <span class="n">rest</span> <span class="n">api</span>
+<span class="o">-</span><span class="n">f</span> <span class="o">&lt;</span><span class="n">METRIC</span> <span class="n">FUNCTION</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">--</span><span class="n">function</span> <span class="o">&lt;</span><span class="n">METRIC</span> <span class="n">FUNCTION</span><span class="o">&gt;</span>  <span class="nb">set</span> <span class="n">a</span> <span class="n">specific</span> <span class="n">metric</span> <span class="n">function</span>
+<span class="o">-</span><span class="n">c</span><span class="p">,</span> <span class="o">--</span><span class="n">checklist</span>                                     <span class="n">gets</span> <span class="n">metrics</span> <span class="ow">in</span> <span class="n">check</span> <span class="nb">list</span>
+<span class="o">-</span><span class="n">s</span> <span class="o">&lt;</span><span class="n">BACKEND</span> <span class="n">TYPE</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">--</span><span class="n">save</span> <span class="o">&lt;</span><span class="n">BACKEND</span> <span class="n">TYPE</span><span class="o">&gt;</span>            <span class="n">store</span> <span class="n">data</span> <span class="n">to</span> <span class="n">InfluxDB</span> <span class="ow">or</span> <span class="n">Graphite</span> <span class="n">time</span> <span class="n">series</span> <span class="n">database</span>
+<span class="o">-</span><span class="n">d</span><span class="p">,</span> <span class="o">--</span><span class="n">debug</span>                                         <span class="n">enable</span> <span class="n">debug</span>
+<span class="o">-</span><span class="n">l</span><span class="p">,</span> <span class="o">--</span><span class="n">log</span>                                           <span class="n">enable</span> <span class="n">log</span>
+<span class="o">-</span><span class="n">r</span><span class="p">,</span> <span class="o">--</span><span class="n">release</span>                                       <span class="n">show</span> <span class="n">robot</span> <span class="n">release</span> <span class="ow">and</span> <span class="n">exit</span>
+</pre></div>
+</div>
+<ul>
+<li><p class="first">allowed values for method:</p>
+<blockquote>
+<div><p>version, uptime, health_load, health_memory, health_storage, health_swap,
+health_system, health_softwarepackages, health_databasestorage, health_applmgmt, cpu_util,
+mem_usage, systemload, disk_latencyrate, disk_readrate, disk_writerate,
+rx_activity_eth0, rx_activity_eth1, rx_packetRate_eth0, rx_packetRate_eth1,
+rx_drop_eth0, rx_drop_eth1, rx_error_eth0, rx_error_eth1, tx_activity_eth0,
+tx_activity_eth1, tx_packetRate_eth0, tx_packetRate_eth1, tx_drop_eth0, tx_drop_eth1,
+tx_error_eth0, tx_error_eth1, fs_root, fs_swap, fs_boot, fs_core, fs_log, fs_db,
+fs_dblog, fs_seat, fs_archive, fs_updatemgr, fs_imagebuilder, fs_autodeploy,
+fs_netdump, fs_lifecycle, fs_vtsdb, fs_vtsdblog, content_library, backup_status, srvc_all,
+srvc_content-library, srvc_pschealth, srvc_vcha, srvc_vmware-vpostgres, srvc_vmware-postgres-archiver,
+srvc_vpxd, srvc_vsan-health, srvc_vsphere-client, srvc_vsphere-ui, available_updates,
+vcha_active_node, vcha_health_cluster</p>
+</div></blockquote>
+</li>
+<li><p class="first">allowed values for function:</p>
+<blockquote>
+<div><p>MIN, AVG, MAX</p>
+</div></blockquote>
+</li>
+<li><p class="first">allowed values for save:</p>
+<blockquote>
+<div><p>influxdb, graphite</p>
+</div></blockquote>
+<p>[Warning: only numeric metrics are supported saving on Graphite]</p>
+</li>
+</ul>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p class="first">Get version:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;version&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get uptime:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;uptime&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get health load:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;health_load&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get health memory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;health_memory&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get health storage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;health_storage&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get health swap:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;health_swap&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get health system:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;health_system&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get CPU usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;cpu_util&quot;</span> <span class="o">--</span><span class="n">function</span> <span class="s2">&quot;AVG&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get memory usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;mem_usage&quot;</span> <span class="o">--</span><span class="n">function</span> <span class="s2">&quot;AVG&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get system load per min:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;systemload&quot;</span> <span class="o">--</span><span class="n">function</span> <span class="s2">&quot;AVG&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get disk latency rate (dm-[0:10]):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;disk_latencyrate&quot;</span> <span class="o">--</span><span class="n">function</span> <span class="s2">&quot;MAX&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get disk read rate (dm-[0:10]):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;disk_readrate&quot;</span> <span class="o">--</span><span class="n">function</span> <span class="s2">&quot;MAX&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get disk write rate (dm-[0:10]):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;disk_writerate&quot;</span> <span class="o">--</span><span class="n">function</span> <span class="s2">&quot;MAX&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get ethernet interface eth0 bits received rate:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;rx_activity_eth0&quot;</span> <span class="o">--</span><span class="n">function</span> <span class="s2">&quot;MAX&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get ethernet interface eth0 bits transmitted rate:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;tx_activity_eth0&quot;</span> <span class="o">--</span><span class="n">function</span> <span class="s2">&quot;MAX&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get ethernet interface eth0 packets received rate:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;rx_packetRate_eth0&quot;</span> <span class="o">--</span><span class="n">function</span> <span class="s2">&quot;MAX&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get ethernet interface eth0 packets transmitted rate:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;tx_packetRate_eth0&quot;</span> <span class="o">--</span><span class="n">function</span> <span class="s2">&quot;MAX&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get ethernet interface eth0 drops received rate:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;rx_drop_eth0&quot;</span> <span class="o">--</span><span class="n">function</span> <span class="s2">&quot;MAX&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get ethernet interface eth0 drops transmitted rate:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;tx_drop_eth0&quot;</span> <span class="o">--</span><span class="n">function</span> <span class="s2">&quot;MAX&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get ethernet interface eth0 errors received rate:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;rx_error_eth0&quot;</span> <span class="o">--</span><span class="n">function</span> <span class="s2">&quot;MAX&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get ethernet interface eth0 errors transmitted rate:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;tx_error_eth0&quot;</span> <span class="o">--</span><span class="n">function</span> <span class="s2">&quot;MAX&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get ethernet interface eth1 bits received rate:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;rx_activity_eth1&quot;</span> <span class="o">--</span><span class="n">function</span> <span class="s2">&quot;MAX&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get ethernet interface eth1 bits transmitted rate:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;tx_activity_eth1&quot;</span> <span class="o">--</span><span class="n">function</span> <span class="s2">&quot;MAX&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get ethernet interface eth1 packets received rate:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;rx_packetRate_eth1&quot;</span> <span class="o">--</span><span class="n">function</span> <span class="s2">&quot;MAX&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get ethernet interface eth1 packets transmitted rate:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;tx_packetRate_eth1&quot;</span> <span class="o">--</span><span class="n">function</span> <span class="s2">&quot;MAX&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get ethernet interface eth1 drops received rate:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;rx_drop_eth1&quot;</span> <span class="o">--</span><span class="n">function</span> <span class="s2">&quot;MAX&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get ethernet interface eth1 drops transmitted rate:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;tx_drop_eth1&quot;</span> <span class="o">--</span><span class="n">function</span> <span class="s2">&quot;MAX&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get ethernet interface eth1 errors received rate:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;rx_error_eth1&quot;</span> <span class="o">--</span><span class="n">function</span> <span class="s2">&quot;MAX&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get ethernet interface eth1 errors transmitted rate:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;tx_error_eth1&quot;</span> <span class="o">--</span><span class="n">function</span> <span class="s2">&quot;MAX&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get filesystem root usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;fs_root&quot;</span> <span class="o">--</span><span class="n">function</span> <span class="s2">&quot;MAX&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get filesystem boot usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;fs_boot&quot;</span> <span class="o">--</span><span class="n">function</span> <span class="s2">&quot;MAX&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get filesystem swap usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;fs_swap&quot;</span> <span class="o">--</span><span class="n">function</span> <span class="s2">&quot;MAX&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get filesystem log usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;fs_log&quot;</span> <span class="o">--</span><span class="n">function</span> <span class="s2">&quot;MAX&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get filesystem db usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;fs_db&quot;</span> <span class="o">--</span><span class="n">function</span> <span class="s2">&quot;MAX&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get filesystem dblog usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;fs_dblog&quot;</span> <span class="o">--</span><span class="n">function</span> <span class="s2">&quot;MAX&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get filesystem seat usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;fs_seat&quot;</span> <span class="o">--</span><span class="n">function</span> <span class="s2">&quot;MAX&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get filesystem core usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;fs_core&quot;</span> <span class="o">--</span><span class="n">function</span> <span class="s2">&quot;MAX&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get filesystem archive usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;fs_archive&quot;</span> <span class="o">--</span><span class="n">function</span> <span class="s2">&quot;MAX&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get filesystem updatemgr usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;fs_updatemgr&quot;</span> <span class="o">--</span><span class="n">function</span> <span class="s2">&quot;MAX&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get filesystem imagebuilder usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;fs_imagebuilder&quot;</span> <span class="o">--</span><span class="n">function</span> <span class="s2">&quot;MAX&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get filesystem autodeploy usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;fs_autodeploy&quot;</span> <span class="o">--</span><span class="n">function</span> <span class="s2">&quot;MAX&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get filesystem netdump usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;fs_netdump&quot;</span> <span class="o">--</span><span class="n">function</span> <span class="s2">&quot;MAX&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get content library synchronization status:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;content_library&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get latest backup status:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;backup_status&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get health status of all services:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;srvc_all&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get health status of content library service:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;srvc_content-library&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get health status of psc service:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;srvc_pschealth&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get health status of vcsa service:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;srvc_vcha&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get health status of vpostgres service:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;srvc_vmware-vpostgres&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get health status of vpostgres-archiver service:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;srvc_vmware-postgres-archiver&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get health status of vpxd service:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;srvc_vpxd&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get health status of vsan service:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;srvc_vsan-health&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get health status of vsphere-client service:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;srvc_vsphere-ui&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get updates available:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;available_updates&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get vcha node active:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;vcha_active_node&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Get vcha health cluster:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">vcsa_monitor</span> <span class="o">--</span><span class="n">vcsa</span> <span class="n">vcenter</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">intranet</span> <span class="o">--</span><span class="n">username</span> <span class="s2">&quot;monitor@vsphere.local&quot;</span>
+<span class="o">--</span><span class="n">password</span> <span class="s2">&quot;xxxxxxxxxx&quot;</span> <span class="o">--</span><span class="n">method</span> <span class="s2">&quot;vcha_health_cluster&quot;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<dl class="function">
+<dt id="vcsa_monitor.__main__.call_method">
+<code class="descclassname">vcsa_monitor.__main__.</code><code class="descname">call_method</code><span class="sig-paren">(</span><em>vcsa</em>, <em>token</em>, <em>method</em>, <em>function</em>, <em>save</em>, <em>log</em>, <em>debug</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vcsa_monitor/__main__.html#call_method"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#vcsa_monitor.__main__.call_method" title="Permalink to this definition">¶</a></dt>
+<dd><p>Call method to get a specific metric</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>vcsa</strong> (<em>str</em>) – name of a specific vCenter (fqdn)</li>
+<li><strong>token</strong> (<em>str</em>) – session id</li>
+<li><strong>method</strong> (<em>str</em>) – set a specific method</li>
+<li><strong>function</strong> (<em>str</em>) – set a specific metric function</li>
+<li><strong>save</strong> (<em>bool</em>) – store data to database</li>
+<li><strong>log</strong> (<em>bool</em>) – enable log to file</li>
+<li><strong>debug</strong> (<em>bool</em>) – enable debug</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="vcsa_monitor.__main__.main">
+<code class="descclassname">vcsa_monitor.__main__.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/vcsa_monitor/__main__.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#vcsa_monitor.__main__.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="vcsa_monitor.__main__.rest_available_updates">
+<code class="descclassname">vcsa_monitor.__main__.</code><code class="descname">rest_available_updates</code><span class="sig-paren">(</span><em>vcsa</em>, <em>token</em>, <em>save</em>, <em>log</em>, <em>debug</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vcsa_monitor/__main__.html#rest_available_updates"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#vcsa_monitor.__main__.rest_available_updates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use rest method available updates and store result</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>vcsa</strong> (<em>str</em>) – name of a specific vCenter (fqdn)</li>
+<li><strong>token</strong> (<em>str</em>) – session id</li>
+<li><strong>save</strong> (<em>str</em>) – store data to database InfluxDB or Graphite</li>
+<li><strong>log</strong> (<em>bool</em>) – enable log to file</li>
+<li><strong>debug</strong> (<em>bool</em>) – enable debug</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="vcsa_monitor.__main__.rest_backup_status">
+<code class="descclassname">vcsa_monitor.__main__.</code><code class="descname">rest_backup_status</code><span class="sig-paren">(</span><em>vcsa</em>, <em>token</em>, <em>save</em>, <em>log</em>, <em>debug</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vcsa_monitor/__main__.html#rest_backup_status"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#vcsa_monitor.__main__.rest_backup_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use rest method backup status and store result</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>vcsa</strong> (<em>str</em>) – name of a specific vCenter (fqdn)</li>
+<li><strong>token</strong> (<em>str</em>) – session id</li>
+<li><strong>save</strong> (<em>str</em>) – store data to database InfluxDB or Graphite</li>
+<li><strong>log</strong> (<em>bool</em>) – enable log to file</li>
+<li><strong>debug</strong> (<em>bool</em>) – enable debug</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="vcsa_monitor.__main__.rest_content_library">
+<code class="descclassname">vcsa_monitor.__main__.</code><code class="descname">rest_content_library</code><span class="sig-paren">(</span><em>vcsa</em>, <em>token</em>, <em>save</em>, <em>log</em>, <em>debug</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vcsa_monitor/__main__.html#rest_content_library"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#vcsa_monitor.__main__.rest_content_library" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use rest method content library and store result</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>vcsa</strong> (<em>str</em>) – name of a specific vCenter (fqdn)</li>
+<li><strong>token</strong> (<em>str</em>) – session id</li>
+<li><strong>save</strong> (<em>str</em>) – store data to database InfluxDB or Graphite</li>
+<li><strong>log</strong> (<em>bool</em>) – enable log to file</li>
+<li><strong>debug</strong> (<em>bool</em>) – enable debug</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="vcsa_monitor.__main__.rest_cpu_mem_usage">
+<code class="descclassname">vcsa_monitor.__main__.</code><code class="descname">rest_cpu_mem_usage</code><span class="sig-paren">(</span><em>vcsa</em>, <em>token</em>, <em>method</em>, <em>function</em>, <em>save</em>, <em>log</em>, <em>debug</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vcsa_monitor/__main__.html#rest_cpu_mem_usage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#vcsa_monitor.__main__.rest_cpu_mem_usage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use rest method cpu/memory utilization and store result</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>vcsa</strong> (<em>str</em>) – name of a specific vCenter (fqdn)</li>
+<li><strong>token</strong> (<em>str</em>) – session id</li>
+<li><strong>method</strong> (<em>str</em>) – set a specific method (value = cpu, memory)</li>
+<li><strong>function</strong> (<em>str</em>) – set a specific metric function (value = MIN, AVG, MAX)</li>
+<li><strong>save</strong> (<em>str</em>) – store data to database InfluxDB or Graphite</li>
+<li><strong>log</strong> (<em>bool</em>) – enable log to file</li>
+<li><strong>debug</strong> (<em>bool</em>) – enable debug</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="vcsa_monitor.__main__.rest_disk_performance">
+<code class="descclassname">vcsa_monitor.__main__.</code><code class="descname">rest_disk_performance</code><span class="sig-paren">(</span><em>vcsa</em>, <em>token</em>, <em>method</em>, <em>function</em>, <em>save</em>, <em>log</em>, <em>debug</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vcsa_monitor/__main__.html#rest_disk_performance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#vcsa_monitor.__main__.rest_disk_performance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use rest method disk performance and store result</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>vcsa</strong> (<em>str</em>) – name of a specific vCenter (fqdn)</li>
+<li><strong>token</strong> (<em>str</em>) – session id</li>
+<li><strong>method</strong> (<em>str</em>) – set a specific method (value = disk_latencyrate, disk_readrate, disk_writerate)</li>
+<li><strong>function</strong> (<em>str</em>) – set a specific metric function (value = MIN, AVG, MAX)</li>
+<li><strong>save</strong> (<em>str</em>) – store data to database InfluxDB or Graphite</li>
+<li><strong>log</strong> (<em>bool</em>) – enable log to file</li>
+<li><strong>debug</strong> (<em>bool</em>) – enable debug</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="vcsa_monitor.__main__.rest_filesystem_usage">
+<code class="descclassname">vcsa_monitor.__main__.</code><code class="descname">rest_filesystem_usage</code><span class="sig-paren">(</span><em>vcsa</em>, <em>token</em>, <em>method</em>, <em>function</em>, <em>save</em>, <em>log</em>, <em>debug</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vcsa_monitor/__main__.html#rest_filesystem_usage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#vcsa_monitor.__main__.rest_filesystem_usage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use rest method filesystem usage and store data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>vcsa</strong> (<em>str</em>) – name of a specific vCenter (fqdn)</li>
+<li><strong>token</strong> (<em>str</em>) – session id</li>
+<li><strong>method</strong> (<em>str</em>) – set a specific method (value = fs_root, fs_swap, fs_boot, fs_core, fs_log, fs_db, fs_dblog,
+fs_seat, fs_archive, fs_updatemgr, fs_imagebuilder, fs_autodeploy,
+fs_netdump, fs_lifecycle, fs_vtsdb, fs_vtsdblog)</li>
+<li><strong>function</strong> (<em>str</em>) – set a specific metric function (value = MIN, AVG, MAX)</li>
+<li><strong>save</strong> (<em>str</em>) – store data to database InfluxDB or Graphite</li>
+<li><strong>log</strong> (<em>bool</em>) – enable log to file</li>
+<li><strong>debug</strong> (<em>bool</em>) – enable debug</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="vcsa_monitor.__main__.rest_health">
+<code class="descclassname">vcsa_monitor.__main__.</code><code class="descname">rest_health</code><span class="sig-paren">(</span><em>vcsa</em>, <em>token</em>, <em>method</em>, <em>save</em>, <em>log</em>, <em>debug</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vcsa_monitor/__main__.html#rest_health"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#vcsa_monitor.__main__.rest_health" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use rest method health and store result</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>vcsa</strong> (<em>str</em>) – name of a specific vCenter (fqdn)</li>
+<li><strong>token</strong> (<em>str</em>) – session id</li>
+<li><strong>method</strong> (<em>str</em>) – set a specific method (value = load, mem, storage, swap, system, software-packages, database-storage)</li>
+<li><strong>save</strong> (<em>str</em>) – store data to database InfluxDB or Graphite</li>
+<li><strong>log</strong> (<em>bool</em>) – enable log to file</li>
+<li><strong>debug</strong> (<em>bool</em>) – enable debug</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="vcsa_monitor.__main__.rest_health_service">
+<code class="descclassname">vcsa_monitor.__main__.</code><code class="descname">rest_health_service</code><span class="sig-paren">(</span><em>vcsa</em>, <em>token</em>, <em>method</em>, <em>save</em>, <em>log</em>, <em>debug</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vcsa_monitor/__main__.html#rest_health_service"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#vcsa_monitor.__main__.rest_health_service" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use rest method health service and store result</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>vcsa</strong> (<em>str</em>) – name of a specific vCenter (fqdn)</li>
+<li><strong>token</strong> (<em>str</em>) – session id</li>
+<li><strong>method</strong> (<em>str</em>) – set a specific method (value = srvc_all, srvc_content-library, srvc_pschealth,
+srvc_vcha, srvc_vmware-vpostgres, srvc_vmware-postgres-archiver,
+srvc_vpxd, srvc_vsan-health, srvc_vsphere-client, srvc_vsphere-ui)</li>
+<li><strong>save</strong> (<em>str</em>) – store data to database InfluxDB or Graphite</li>
+<li><strong>log</strong> (<em>bool</em>) – enable log to file</li>
+<li><strong>debug</strong> (<em>bool</em>) – enable debug</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="vcsa_monitor.__main__.rest_network_performance">
+<code class="descclassname">vcsa_monitor.__main__.</code><code class="descname">rest_network_performance</code><span class="sig-paren">(</span><em>vcsa</em>, <em>token</em>, <em>method</em>, <em>function</em>, <em>save</em>, <em>log</em>, <em>debug</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vcsa_monitor/__main__.html#rest_network_performance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#vcsa_monitor.__main__.rest_network_performance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use rest method network performance and store result</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>vcsa</strong> (<em>str</em>) – name of a specific vCenter (fqdn)</li>
+<li><strong>token</strong> (<em>str</em>) – session id</li>
+<li><strong>method</strong> (<em>str</em>) – set a specific method (value = rx_activity_eth0, rx_activity_eth1, rx_packetRate_eth0,
+rx_packetRate_eth1, rx_drop_eth0, rx_drop_eth1, rx_error_eth0,
+rx_error_eth1, tx_activity_eth0, tx_activity_eth1, tx_packetRate_eth0,
+tx_packetRate_eth1, tx_drop_eth0, tx_drop_eth1, tx_error_eth0,
+tx_error_eth1)</li>
+<li><strong>function</strong> (<em>str</em>) – set a specific metric function (value = MIN, AVG, MAX)</li>
+<li><strong>save</strong> (<em>str</em>) – store data to database InfluxDB or Graphite</li>
+<li><strong>log</strong> (<em>bool</em>) – enable log to file</li>
+<li><strong>debug</strong> (<em>bool</em>) – enable debug</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="vcsa_monitor.__main__.rest_systemload">
+<code class="descclassname">vcsa_monitor.__main__.</code><code class="descname">rest_systemload</code><span class="sig-paren">(</span><em>vcsa</em>, <em>token</em>, <em>function</em>, <em>save</em>, <em>log</em>, <em>debug</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vcsa_monitor/__main__.html#rest_systemload"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#vcsa_monitor.__main__.rest_systemload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use rest method systemload and store result</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>vcsa</strong> (<em>str</em>) – name of a specific vCenter (fqdn)</li>
+<li><strong>token</strong> (<em>str</em>) – session id</li>
+<li><strong>function</strong> (<em>str</em>) – set a specific metric function (value = MIN, AVG, MAX)</li>
+<li><strong>save</strong> (<em>str</em>) – store data to database InfluxDB or Graphite</li>
+<li><strong>log</strong> (<em>bool</em>) – enable log to file</li>
+<li><strong>debug</strong> (<em>bool</em>) – enable debug</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="vcsa_monitor.__main__.rest_uptime">
+<code class="descclassname">vcsa_monitor.__main__.</code><code class="descname">rest_uptime</code><span class="sig-paren">(</span><em>vcsa</em>, <em>token</em>, <em>save</em>, <em>log</em>, <em>debug</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vcsa_monitor/__main__.html#rest_uptime"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#vcsa_monitor.__main__.rest_uptime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use rest method uptime and store result</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>vcsa</strong> (<em>str</em>) – name of a specific vCenter (fqdn)</li>
+<li><strong>token</strong> (<em>str</em>) – session id</li>
+<li><strong>save</strong> (<em>str</em>) – store data to database InfluxDB or Graphite</li>
+<li><strong>log</strong> (<em>bool</em>) – enable log to file</li>
+<li><strong>debug</strong> (<em>bool</em>) – enable debug</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="vcsa_monitor.__main__.rest_vcha_active_node">
+<code class="descclassname">vcsa_monitor.__main__.</code><code class="descname">rest_vcha_active_node</code><span class="sig-paren">(</span><em>vcsa</em>, <em>token</em>, <em>save</em>, <em>log</em>, <em>debug</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vcsa_monitor/__main__.html#rest_vcha_active_node"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#vcsa_monitor.__main__.rest_vcha_active_node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use rest method vcha active node and store result</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>vcsa</strong> (<em>str</em>) – name of a specific vCenter (fqdn)</li>
+<li><strong>token</strong> (<em>str</em>) – session id</li>
+<li><strong>save</strong> (<em>str</em>) – store data to database InfluxDB or Graphite</li>
+<li><strong>log</strong> (<em>bool</em>) – enable log to file</li>
+<li><strong>debug</strong> (<em>bool</em>) – enable debug</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="vcsa_monitor.__main__.rest_vcha_health_cluster">
+<code class="descclassname">vcsa_monitor.__main__.</code><code class="descname">rest_vcha_health_cluster</code><span class="sig-paren">(</span><em>vcsa</em>, <em>token</em>, <em>save</em>, <em>log</em>, <em>debug</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vcsa_monitor/__main__.html#rest_vcha_health_cluster"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#vcsa_monitor.__main__.rest_vcha_health_cluster" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use rest method vcha health cluster and store result</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>vcsa</strong> (<em>str</em>) – name of a specific vCenter (fqdn)</li>
+<li><strong>token</strong> (<em>str</em>) – session id</li>
+<li><strong>save</strong> (<em>str</em>) – store data to database InfluxDB or Graphite</li>
+<li><strong>log</strong> (<em>bool</em>) – enable log to file</li>
+<li><strong>debug</strong> (<em>bool</em>) – enable debug</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="vcsa_monitor.__main__.rest_version">
+<code class="descclassname">vcsa_monitor.__main__.</code><code class="descname">rest_version</code><span class="sig-paren">(</span><em>vcsa</em>, <em>token</em>, <em>save</em>, <em>log</em>, <em>debug</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vcsa_monitor/__main__.html#rest_version"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#vcsa_monitor.__main__.rest_version" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use rest method version and store result</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>vcsa</strong> (<em>str</em>) – name of a specific vCenter (fqdn)</li>
+<li><strong>token</strong> (<em>str</em>) – session id</li>
+<li><strong>save</strong> (<em>str</em>) – store data to database InfluxDB or Graphite</li>
+<li><strong>log</strong> (<em>bool</em>) – enable log to file</li>
+<li><strong>debug</strong> (<em>bool</em>) – enable debug</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="vcsa_monitor.__main__.save_restapi_health">
+<code class="descclassname">vcsa_monitor.__main__.</code><code class="descname">save_restapi_health</code><span class="sig-paren">(</span><em>vcsa</em>, <em>status</em>, <em>save</em>, <em>log</em>, <em>debug</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vcsa_monitor/__main__.html#save_restapi_health"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#vcsa_monitor.__main__.save_restapi_health" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store rest api status</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>vcsa</strong> (<em>str</em>) – name of a specific vCenter (fqdn)</li>
+<li><strong>status</strong> (<em>int</em>) – status of the rest api</li>
+<li><strong>save</strong> (<em>str</em>) – store data to database InfluxDB or Graphite</li>
+<li><strong>log</strong> (<em>bool</em>) – enable log to file</li>
+<li><strong>debug</strong> (<em>bool</em>) – enable debug</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">VCSA REST API Monitoring stable 2.0.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Danilo Cilento (GPLv3).
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+    </div>
+  </body>
+</html>
