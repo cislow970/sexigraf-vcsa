@@ -209,7 +209,8 @@ You can add a connection for each vCenter 8.x in your infrastructure:
 ![VCSA Network and Storage 1](images/sexigraf_vcsa_network_storage_1.png)
 ![VCSA Network and Storage 2](images/sexigraf_vcsa_network_storage_2.png)
 ![VCSA Network and Storage 3](images/sexigraf_vcsa_network_storage_3.png)
-![VCSA Network and Storage 4](images/sexigraf_vcsa_network_storage_4.png)  
+![VCSA Network and Storage 4](images/sexigraf_vcsa_network_storage_4.png)
+![VCSA Network and Storage 5](images/sexigraf_vcsa_network_storage_5.png)  
 
 * VCHA cluster:  
 
