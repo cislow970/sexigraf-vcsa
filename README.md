@@ -61,9 +61,9 @@ Telegraf acquires SNMP metrics but also checks critical SSL certificates on TCP 
 
 3. [Donwload project from GitHub](https://github.com/cislow970/sexigraf/archive/refs/heads/main.zip)
 
-4. Copy InfluxDB config *influxdb.conf* from project folder /etc/influxdb/ in the same folder on SexiGraf appliance
+4. Copy InfluxDB config *influxdb.conf* from project folder /etc/influxdb/ in the same folder on SexiGraf appliance.
 
-5. Launch influx client from command line: ``influx``  
+5. Launch influx client from command line: ``influx``
 
 6. Submit Influx Query Language statements for create database, users and grants ([Reference guide InfluxDB](https://docs.influxdata.com/influxdb/v1.8/introduction/get-started/)):
 	* > ``CREATE DATABASE vcsa_rest``
@@ -80,25 +80,25 @@ Telegraf acquires SNMP metrics but also checks critical SSL certificates on TCP 
 
 7. Exit from influx command line and restart service: ``systemctl restart influxdb.service``
 
-8. Copy all files from project folder */etc/telegraf/telegraf.d/* in the same path on SexiGraf appliance (verify that permissions of uploaded files are 644 with ownership root:root)
+8. Copy all files from project folder */etc/telegraf/telegraf.d/* in the same path on SexiGraf appliance (verify that permissions of uploaded files are 644 with ownership root:root).
 
-9. Copy directory *templates* from project folder */etc/telegraf/* in the same path on SexiGraf appliance
+9. Copy directory *templates* from project folder */etc/telegraf/* in the same path on SexiGraf appliance.
 
-10. Copy file from project folder */etc/grafana/provisioning/dashboards/* in the same path on SexiGraf appliance (make the ownership and permissions of the uploaded file consistent with those already present)
+10. Copy file from project folder */etc/grafana/provisioning/dashboards/* in the same path on SexiGraf appliance (make the ownership and permissions of the uploaded file consistent with those already present).
 
-11. Copy file from project folder */mnt/wfs/inventory/* in the same path on SexiGraf appliance (verify that permissions of uploaded file are 644 with ownership www-data:www-data)
+11. Copy file from project folder */mnt/wfs/inventory/* in the same path on SexiGraf appliance (verify that permissions of uploaded file are 644 with ownership www-data:www-data).
 
-12. Copy directory *vcsa_monitor* from project folder */usr/lib/python3.8/* in the same path on SexiGraf appliance
+12. Copy directory *vcsa_monitor* from project folder */usr/lib/python3.8/* in the same path on SexiGraf appliance.
 
-13. Copy all files from project folder */usr/local/bin/* in the same path on SexiGraf appliance (verify that permissions of uploaded files are 755 with ownership root:root)
+13. Copy all files from project folder */usr/local/bin/* in the same path on SexiGraf appliance (verify that permissions of uploaded files are 755 with ownership root:root).
 
-14. Copy directory *VMware_VCSA* from project folder */var/lib/grafana/dashboards/* in the same path on SexiGraf appliance
+14. Copy directory *VMware_VCSA* from project folder */var/lib/grafana/dashboards/* in the same path on SexiGraf appliance.
 
-15. Copy directory *grafana-clock-panel* from project folder */var/lib/grafana/plugins/* in the same path on SexiGraf appliance
+15. Copy directory *grafana-clock-panel* from project folder */var/lib/grafana/plugins/* in the same path on SexiGraf appliance.
 
-16. Copy all content from project folder */var/www/admin/* in the same path on SexiGraf appliance (verify that permissions of uploaded files are 644 with ownership www-data:www-data)
+16. Copy all content from project folder */var/www/admin/* in the same path on SexiGraf appliance (verify that permissions of uploaded files are 644 with ownership www-data:www-data).
 
-17. Copy all files from project folder */var/www/scripts/* in the same path on SexiGraf appliance (verify that permissions of uploaded files are 644 with ownership www-data:www-data)
+17. Copy all files from project folder */var/www/scripts/* in the same path on SexiGraf appliance (verify that permissions of uploaded files are 644 with ownership www-data:www-data).
 
 18. Create ssh key for user telegraf on SexiGraf appliance:
 	* Edit file */etc/passwd* and change shell from **/bin/false** to **/bin/bash**
@@ -111,7 +111,7 @@ Telegraf acquires SNMP metrics but also checks critical SSL certificates on TCP 
 19. Make file *vcsa_monitor_kill* in path */etc/cron.d* on SexiGraf appliance with following content:  
 	``0 */1 * * * root /usr/local/bin/vcsa_monitor_kill.sh >/dev/null 2>&1``
 
-20. Reboot SexiGraf appliance
+20. Reboot SexiGraf appliance.
 
 # Configuration Addon
 
