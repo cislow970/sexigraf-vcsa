@@ -100,7 +100,18 @@ Telegraf acquires SNMP metrics but also checks critical SSL certificates on TCP 
 
 17. Copy all files from project folder */var/www/scripts/* in the same path on SexiGraf appliance (verify that permissions of uploaded files are 644 with ownership www-data:www-data)
 
-18. Reboot SexiGraf appliance
+18. Create ssh key for user telegraf on SexiGraf appliance:
+	* edit file */etc/passwd* and change shell from **/bin/false** to **/bin/bash**
+	* ``su - telegraf``
+	* ``ssh-keygen``
+	* check for the newly generated ssh keys in the path */etc/telegraf/.ssh*
+	* edit file */etc/passwd* and change shell from **/bin/bash** to **/bin/false**
+	* ``exit``
+
+19. Make file *vcsa_monitor_kill* in path */etc/cron.d* on SexiGraf appliance with following content:  
+	``0 */1 * * * root /usr/local/bin/vcsa_monitor_kill.sh >/dev/null 2>&1``
+
+20. Reboot SexiGraf appliance
 
 # Configuration Addon
 
