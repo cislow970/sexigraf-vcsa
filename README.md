@@ -43,7 +43,7 @@ Telegraf acquires SNMP metrics but also checks critical SSL certificates on TCP 
 
 # Installation Addon
 
-Before starting the installation, enable a snapshot.
+**Before starting the installation, enable a snapshot.**
 
 1. Install on SexiGraf the following python modules: 
 	* > ``pip install graphyte``
@@ -84,7 +84,7 @@ Before starting the installation, enable a snapshot.
 16. Copy all content from project folder */var/www/admin/* in the same path on SexiGraf appliance (verify that permissions of uploaded files are 644 with ownership www-data:www-data)
 17. Copy all files from project folder */var/www/scripts/* in the same path on SexiGraf appliance (verify that permissions of uploaded files are 644 with ownership www-data:www-data)
 18. Reboot SexiGraf appliance
-  
+
 # Configuration Addon
 
 ## Change default shell for root user on VCSA
