@@ -61,7 +61,7 @@ Telegraf acquires SNMP metrics but also checks critical SSL certificates on TCP 
 
 3. [Donwload project from GitHub](https://github.com/cislow970/sexigraf/archive/refs/heads/main.zip)
 
-4. Copy InfluxDB config *influxdb.conf* from project folder /etc/influxdb/ in the same folder on SexiGraf appliance.
+4. Copy InfluxDB config **influxdb.conf** from project folder **/etc/influxdb/** in the same folder on SexiGraf appliance.
 
 5. Launch influx client from command line: ``influx``
 
