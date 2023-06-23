@@ -115,6 +115,19 @@ Telegraf acquires SNMP metrics but also checks critical SSL certificates on TCP 
 
 # Configuration Addon
 
+## Create InfluxDB datasources
+
+Add two new datasources as show in the following images:<br/><br/>
+![InfluxDB datasource 1](images/sexigraf_influxdb_datasource_1.png)  
+
+Password for user *pollerpy* is **p0ll3rpy**<br/>
+
+![InfluxDB datasource 2](images/sexigraf_influxdb_datasource_2.png)  
+
+Password for user *telegraf* is **t3l3gr4f**<br/>
+
+![InfluxDB datasource 3](images/sexigraf_influxdb_datasource_3.png)  
+
 ## Change default shell for root user on VCSA
 
 Edit **/etc/password** file and change root user shell from */bin/appliancesh* to */bin/bash*.
