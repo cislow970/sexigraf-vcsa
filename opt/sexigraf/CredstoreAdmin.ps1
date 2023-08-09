@@ -79,7 +79,7 @@ if ($createstore) {
             $viCredentialsList += $viCredentialEntry
         }
     }
-    $result = ""
+    $result = @()
     foreach ($elem in $viCredentialsList) {
         $result += $elem.server + "###" + $elem.username + "###" + $elem.snmpv2comm + "###" + $elem.snmpv3user + "###" + $elem.snmpv3auth + "###" + $elem.snmpv3priv + "###" + $elem.active + "###" + $elem.passive + "###" + $elem.witness
     }
