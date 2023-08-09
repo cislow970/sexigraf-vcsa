@@ -24,7 +24,7 @@
   "editable": false,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "iteration": 1677684286266,
+  "iteration": 1691589632139,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -42,6 +42,7 @@
       },
       "id": 2,
       "panels": [],
+      "repeat": "vcenter",
       "title": "Certificates $vcenter",
       "type": "row"
     },
@@ -693,9 +694,9 @@
       },
       {
         "current": {
-          "selected": false,
-          "text": "vcenter7.campania.local",
-          "value": "vcenter7.campania.local"
+          "selected": true,
+          "text": "All",
+          "value": "$__all"
         },
         "datasource": {
           "type": "influxdb",
@@ -730,6 +731,6 @@
   "timezone": "browser",
   "title": "VCSA SSL Certificates",
   "uid": "X9DVTFDVk",
-  "version": 4,
+  "version": 5,
   "weekStart": ""
 }
